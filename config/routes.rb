@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   mount_ember_app :frontend, to: "/"
+  mount EmberCLI::Engine => 'ember-tests' if Rails.env.development?
   root to: 'visitors#index'
 
   # get '/auth/:provider/callback' => 'sessions#create'
-  # get '/signin' => 'sessions#new', :as => :signin
-  # get '/signout' => 'sessions#destroy', :as => :signout
+  # get '/signin' => 'sessions#new', as: :signin
+  # get '/signout' => 'sessions#destroy', as: :signout
   # get '/auth/failure' => 'sessions#failure'
 
   # The priority is based upon order of creation: first created -> highest priority.
