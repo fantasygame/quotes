@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :quotes
+  namespace :api do
+    resources :quotes
+  end
   mount_ember_app :frontend, to: "/"
   mount EmberCLI::Engine => 'ember-tests' if Rails.env.development?
   root to: 'visitors#index'
