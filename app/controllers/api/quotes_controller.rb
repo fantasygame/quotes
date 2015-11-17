@@ -1,9 +1,9 @@
 module Api
   class QuotesController < ApplicationController
-      def index
-        @quotes = Quote.all
+    def index
+      @quotes = Quote.all
 
-        render json: @quotes
-      end
+      render json: @quotes
+    end
   end
 end
