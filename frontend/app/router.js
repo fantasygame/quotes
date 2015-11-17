@@ -6,7 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('quotes');
+  this.route('quotes', function() {});
 });
 
 export default Router;

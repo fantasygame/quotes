@@ -1,0 +1,16 @@
+<container>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Quote</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |quote|}}
+        <tr>
+          <td>{{quote.content}}<</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</container>
