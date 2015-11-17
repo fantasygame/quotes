@@ -1,16 +1,21 @@
-<container>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Quote</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each model as |quote|}}
-        <tr>
-          <td>{{quote.content}}<</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</container>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 quotes">
+      <ul class="list-unstyled">
+        {{#each model as |quote|}}
+          <li>
+            <div class="quote">
+              <div class="quote__body">
+                {{quote.content}}
+              </div>
+              <div class="quote__actions">
+                <div class="btn btn-success">+</div>
+                <div class="btn btn-danger">-</div>
+              </div>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

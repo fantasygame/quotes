@@ -12,3 +12,20 @@
 @import 'utilities/typography';
 
 @import 'framework/overrides';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.quote__body {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+.quote {
+  margin-bottom: 20px;
+}
