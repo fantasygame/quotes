@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :quotes
-      resources :users, only: :show
+      resources :users, only: [:show, :index]
     end
   end
   mount_ember_app :frontend, to: "/"
