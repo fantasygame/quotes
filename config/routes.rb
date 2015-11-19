@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
 
   namespace :api do
-    resources :quotes
+    namespace :v1 do
+      resources :quotes
+    end
   end
   mount_ember_app :frontend, to: "/"
   mount EmberCLI::Engine => 'ember-tests' if Rails.env.development?
