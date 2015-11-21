@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get '/auth/:provider/callback' => 'sessions#create'
-  get '/signin' => 'sessions#new', as: :signin
-  get '/signout' => 'sessions#destroy', as: :signout
-  get '/auth/failure' => 'sessions#failure'
+  devise_for :users, controllers: { sessions: 'sessions' }
 
   namespace :api do
     namespace :v1 do
