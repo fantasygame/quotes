@@ -1,6 +1,9 @@
 <ul class="nav navbar-nav navbar-right">
-  <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-  <li>
-    <a href="#" {{action 'logout'}}>Logout</a>
-  </li>
+  {{#unless session.isAuthenticated}}
+    <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+  {{else}}
+    <li>
+      <a href="#" {{action 'logout'}}>Logout</a>
+    </li>
+  {{/unless}}
 </ul>
