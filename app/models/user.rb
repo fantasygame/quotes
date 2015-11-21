@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, if: :new_record?
+  before_save :ensure_authentication_token
 
   def set_default_role
     if User.count == 0
@@ -20,6 +21,20 @@ class User < ActiveRecord::Base
       if auth['info']
         user.name = auth['info']['name'] || ""
       end
+    end
+  end
+
+  def ensure_authentication_token
+    return if authentication_token.present?
+    self.authentication_token = generate_authentication_token
+  end
+
+  private
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.find_by(authentication_token: token)
     end
   end
 end
