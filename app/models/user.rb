@@ -14,16 +14,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth['provider']
-      user.uid = auth['uid']
-      if auth['info']
-        user.name = auth['info']['name'] || ""
-      end
-    end
-  end
-
   def ensure_authentication_token
     return if authentication_token.present?
     self.authentication_token = generate_authentication_token
