@@ -6,7 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('quotes', function() {});
+  this.route('quotes', { path: '' }, function() {});
   this.route('users');
   this.route('login');
 });
