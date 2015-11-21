@@ -46,5 +46,10 @@ module.exports = function(environment) {
 
   }
 
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'quotes',
+    routeIfAlreadyAuthenticated: 'quotes'
+  }
+
   return ENV;
 };
