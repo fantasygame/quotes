@@ -6,6 +6,8 @@
     <div {{action "upvote"}} class="btn btn-success">+</div>
     {{quote.voteBalance}}
     <div {{action "downvote"}} class="btn btn-danger">-</div>
-    {{link-to 'Edit' 'quotes.edit' quote class="btn btn-default"}}
+    {{#if canEdit}}
+      {{link-to 'Edit' 'quotes.edit' quote class="btn btn-default"}}
+    {{/if}}
   </div>
 </div>

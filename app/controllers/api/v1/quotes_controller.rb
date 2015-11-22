@@ -2,7 +2,7 @@ module Api
   module V1
     class QuotesController < ApplicationController
       def index
-        @quotes = Quote.all
+        @quotes = Quote.order(id: :asc)
 
         render json: @quotes
       end
