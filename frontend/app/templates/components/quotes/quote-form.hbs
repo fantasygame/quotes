@@ -1,23 +1,6 @@
 <form>
   <p>
-    <label>
-      First Name: {{input value=quote.firstName}}
-    </label>
-  </p>
-  <p>
-    <label>
-      Last Name: {{input value=quote.lastName }}
-    </label>
-  </p>
-  <p>
-    <label>
-        Email: {{input value=quote.email}}
-    </label>
-  </p>
-  <p>
-    <label>
-      Twitter: {{input value=quote.twitter}}
-    </label>
+    {{textarea value=quote.content cols="80" rows="6"}}
   </p>
   <button {{action "save"}}>Save</button>
   <button {{action "cancel"}}>Cancel</button>
