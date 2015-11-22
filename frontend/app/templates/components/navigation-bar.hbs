@@ -8,6 +8,9 @@
       <span class="icon-bar"></span>
       </button>
       {{#link-to 'quotes' class="navbar-brand"}}Quotes{{/link-to}}
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'quotes.new'}}New{{/link-to}}</li>
+      </ul>
     </div>
     <div class="collapse navbar-collapse">
       {{navigation-authentication}}
