@@ -8,6 +8,10 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('quotes', { path: '' }, function() {
     this.route('new');
+
+    this.route('edit', {
+      path: ':quote_id/edit'
+    });
   });
   this.route('users');
   this.route('login');
