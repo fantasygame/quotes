@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :quotes do
         member do
           put :upvote
+          put :downvote
         end
       end
       resources :users, only: [:show, :index]

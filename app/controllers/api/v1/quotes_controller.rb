@@ -37,6 +37,13 @@ module Api
         render json: { message: 'upvoted', voteBalance: quote.vote_balance }, status: :ok
       end
 
+      def downvote
+        quote = Quote.find(params[:id])
+        user = User.find(params[:user_id])
+        quote.downvote_from(user)
+        render json: { message: 'downvoted', voteBalance: quote.vote_balance }, status: :ok
+      end
+
       private
 
       def quote_params

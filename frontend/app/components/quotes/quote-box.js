@@ -10,7 +10,9 @@ export default Ember.Component.extend({
       });
     },
     downvote() {
-      console.log('downvote');
+      this.get('quote').downvote({user_id: 2}).then(response => {
+        this.set('quote.voteBalance', response.voteBalance);
+      });
     }
   }
 });
