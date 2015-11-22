@@ -5,7 +5,9 @@ export default Ember.Component.extend({
   quote: null,
   actions: {
     upvote() {
-      console.log('upvote');
+      this.get('quote').upvote({user_id: 2}).then(response => {
+        this.set('quote.voteBalance', response.voteBalance);
+      });
     },
     downvote() {
       console.log('downvote');
