@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
+  quote: null,
 
   actions: {
     save() {
@@ -11,6 +12,7 @@ export default Ember.Component.extend({
       });
     },
     cancel() {
+      this.get('quote').destroyRecord();
       this.get('router').transitionTo('quotes');
     }
   }
