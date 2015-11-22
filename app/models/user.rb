@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, if: :new_record?
   before_save :ensure_authentication_token
+  has_many :quotes
 
   def set_default_role
     if User.count == 0
