@@ -9,6 +9,9 @@
   </div>
   <button {{action "authenticate"}} type="submit" class="btn btn-default">Login</button>
 </form>
+<div class="signup__link">
+  {{link-to 'Signup' 'signup'}}
+</div>
 
 {{#if errorMessage}}
   {{errorMessage}}

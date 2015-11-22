@@ -1,0 +1,30 @@
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Ko6A8NsuwC3dKMlOvFJ0ge2lZEN0Z9SLjFnc/t8pdBjWaERCcQbXuZih6Fj7u354Ek679qUkS6gbQtdbiz5x7g==">
+
+  <div class="form-group">
+    <label for="user_email">Email</label>
+    <input autofocus="autofocus" type="email" name="user[email]" id="user_email" class="form-control" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="user_name">Name</label>
+    <input autofocus="autofocus" type="text" name="user[name]" id="user_name" class="form-control" placeholder="Enter name">
+  </div>
+
+  <div class="form-group">
+    <label for="user_password">Password <em>(8 characters minimum)</em></label>
+    <input autocomplete="off" type="password" name="user[password]" id="user_password" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="user_password_confirmation">Password confirmation</label>
+    <input autocomplete="off" type="password" name="user[password_confirmation]" id="user_password_confirmation" class="form-control">
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Sign up" class="btn btn-default">
+  </div>
+</form>
+
+<div class="signup__link">
+  {{link-to 'Login' 'login'}}
+</div>
