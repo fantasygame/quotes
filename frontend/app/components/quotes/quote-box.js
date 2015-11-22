@@ -2,15 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'li',
-  quote: null,
+  session: Ember.inject.service('session'),
   actions: {
     upvote() {
-      this.get('quote').upvote({user_id: 2}).then(response => {
+      this.get('quote').upvote({user_id: this.get('session').currentUser.id}).then(response => {
         this.set('quote.voteBalance', response.voteBalance);
       });
     },
     downvote() {
-      this.get('quote').downvote({user_id: 2}).then(response => {
+      this.get('quote').downvote({user_id: this.get('session').currentUser.id}).then(response => {
         this.set('quote.voteBalance', response.voteBalance);
       });
     }
