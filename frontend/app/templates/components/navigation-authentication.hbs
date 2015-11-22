@@ -2,6 +2,9 @@
   {{#unless session.isAuthenticated}}
     <li>{{#link-to 'login'}}Login{{/link-to}}</li>
   {{else}}
+    {{#if currentUser.user}}
+      <li><a>{{currentUser.user.email}}</a></li>
+    {{/if}}
     <li>
       <a href="#" {{action 'logout'}}>Logout</a>
     </li>
