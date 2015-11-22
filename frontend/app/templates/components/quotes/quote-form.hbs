@@ -1,7 +1,12 @@
 <form>
-  <p>
-    {{textarea value=quote.content cols="80" rows="6"}}
-  </p>
-  <button {{action "save"}}>Save</button>
-  <button {{action "cancel"}}>Cancel</button>
+  <div class="form-group">
+    <label for="content">Quote</label>
+    {{textarea value=quote.content cols="80" rows="6" name="content" class="form-control"}}
+  </div>
+  <button {{action "save"}} class="btn btn-default">Save</button>
+  <button {{action "cancel"}} class="btn btn-default">Cancel</button>
 </form>
+
+{{#if errorMessage}}
+  {{errorMessage}}
+{{/if}}
