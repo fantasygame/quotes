@@ -1,12 +1,11 @@
 import Ember from 'ember';
 
-const { service } = Ember.inject;
-
 export default Ember.Component.extend({
-  session: service('session'),
+  session: Ember.inject.service('session'),
+
   actions: {
     save() {
-      this.set('quote.user_id', this.get('session.data.authenticated.user_id'));
+      this.set('quote.userId', this.get('session.currentUser.id'));
       this.get('quote').save().then((quote) => {
         this.get('router').transitionTo('quotes');
       });
