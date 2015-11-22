@@ -20,6 +20,16 @@ module Api
         end
       end
 
+      def update
+        quote = Quote.find(params[:id])
+        quote.content = quote_params[:content]
+        if quote.save
+          head :no_content
+        else
+          render json: { errors: quote.errors }, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def quote_params
