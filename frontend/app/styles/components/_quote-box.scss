@@ -3,10 +3,33 @@
 
   .quote__body {
     padding: 10px;
-    margin-bottom: 5px;
     border: 1px solid #e9e9e9;
     border-radius: 10px;
     white-space: pre-wrap;
+  }
+
+  .quote__actions {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .quote__action {
+    width: 35px;
+    display: inline-block;
+    text-align: center;
+
+    .btn {
+      width: 35px;
+    }
+  }
+
+  .quote__vote-balance {
+    font-size: 18px;
+    color: #999999;
+  }
+
+  .quote__edit {
+    margin-left: 15px;
   }
 
   blockquote {
