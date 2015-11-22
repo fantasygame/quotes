@@ -6,6 +6,10 @@ module Api
 
         render json: @quotes
       end
+
+      def show
+        render json: Quote.find(params[:id])
+      end
     end
   end
 end
