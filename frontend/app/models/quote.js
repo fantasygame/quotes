@@ -9,4 +9,5 @@ export default DS.Model.extend({
   voteBalance: DS.attr('number'),
   upvote: memberAction({ path: 'upvote' }),
   downvote: memberAction({ path: 'downvote' }),
+  user: DS.belongsTo('user')
 });
